@@ -1,98 +1,56 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            touch-action: none;
+        }
         body {
-            background: #0b0e1a;
+            background: #1a1a2e;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
+        }
+        .game-wrapper {
+            background: #16213e;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
         canvas {
             display: block;
-            background: #1a1f2e;
-            border: 2px solid #2e3a5e;
-            border-radius: 12px;
-            box-shadow: 0 0 40px rgba(0, 200, 255, 0.15);
-            image-rendering: pixelated;
-        }
-        #ui-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        #start-screen, #gameover-screen {
-            pointer-events: auto;
-            background: rgba(11, 14, 26, 0.88);
-            backdrop-filter: blur(6px);
-            padding: 2rem 3rem;
-            border-radius: 24px;
-            border: 1px solid #3e4e7a;
-            text-align: center;
-            color: #e0e8ff;
-            box-shadow: 0 0 60px rgba(0, 180, 255, 0.2);
-            display: none;
-        }
-        #start-screen.active, #gameover-screen.active { display: block; }
-        #start-screen h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #6ee7ff, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-        #start-screen p { font-size: 1.1rem; opacity: 0.8; margin-bottom: 1.5rem; }
-        #start-screen .key-hint {
-            display: inline-block;
-            background: #2a3450;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            font-size: 1rem;
-            border: 1px solid #4a5a8a;
-            margin: 0.3rem;
-        }
-        .btn {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            border: none;
-            color: white;
-            font-size: 1.3rem;
-            font-weight: 600;
-            padding: 0.8rem 2.4rem;
-            border-radius: 60px;
+            max-width: 400px;
+            height: auto;
+            aspect-ratio: 400 / 600;
+            border-radius: 12px;
+            background: #2d3436;
             cursor: pointer;
-            pointer-events: auto;
-            transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
-            margin-top: 1rem;
+            touch-action: none;
         }
-        .btn:hover { transform: scale(1.04); box-shadow: 0 6px 30px rgba(59, 130, 246, 0.6); }
-        #gameover-screen h2 { font-size: 2.2rem; color: #f87171; margin-bottom: 0.3rem; }
-        #gameover-screen .final-score { font-size: 2rem; font-weight: 700; color: #fbbf24; margin: 0.5rem 0; }
-        #gameover-screen p { opacity: 0.7; margin-bottom: 0.5rem; }
-        #score-display {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #c8d6ff;
-            font-size: 1.6rem;
-            font-weight: 700;
-            text-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
-            background: rgba(11, 14, 26, 0.6);
-            padding: 0.3rem 1.5rem;
-            border-radius: 40px;
-            border: 1px solid #3a4a7a;
-            backdrop-filter: blur(4px);
-            pointer-events: none;
-            z-index: 10;
+        .controls-info {
+            color: #dfe6e9;
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+            opacity: 0.8;
         }
-        #score-display span { color: #fbbf24; }
+        .controls-info span {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 4px 12px;
+            background: #0f3460;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        @media (max-width: 420px) {
+            .game-wrapper {
+                padding: 8px;
+                border-radius: 12px;
+            }
+            .controls-info {
+                font-size: 12px;
+            }
+        }
